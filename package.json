@@ -1,0 +1,25 @@
+{
+  "name": "forkify",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run watch:all",
+    "build-css": "node-sass --include-path scss public/css/main.scss public/css/main.css",
+    "watch:scss": "nodemon -e scss -x & npm run build-css",
+    "watch:all": "parallelshell 'npm run build-css' 'node ./bin/www'"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "^3.1.5",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.7",
+    "parallelshell": "^3.0.1"
+  }
+}
